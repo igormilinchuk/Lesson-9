@@ -42,7 +42,7 @@ function enterPersonalInfo() {
             const newValue = prompt("Введіть значення для нової властивості: ");
             persons[newPropertyName] = newValue;
         }if (chooseAct === '4') {
-            fs.writeFileSync('persons.txt', JSON.stringify(persons, null, 2));
+            fs.writeFileSync('persons.txt', JSON.stringify(persons), { flag: 'a+' });
             console.log('Інформацію збережено у файл persons.txt');
 }} while (chooseAct !== '5');
     }
